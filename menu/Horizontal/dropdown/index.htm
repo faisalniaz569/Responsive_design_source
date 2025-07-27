@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive Grid Menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="dropdownmenu">
+        <div class="menu-container">
+            <div class="menu-header">
+
+                <!-- ✅ Toggle Button (Right side) -->
+                <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+                <!-- ✅ Main Menu Items -->
+                <ul class="menu-items" id="menu-items">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#news">News</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn" onclick="toggleDropdown()">Dropdown</a>
+                        <div class="dropdown-content">
+                            <a href="#">Link 1</a>
+                            <a href="#">Link 2</a>
+                            <a href="#">Link 3</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu-items');
+
+        toggle.onclick = function() {
+            menu.classList.toggle('active');
+            toggle.innerHTML = menu.classList.contains('active') ? '✖' : '☰';
+        };
+
+        function toggleDropdown() {
+            const dropdown = document.querySelector('.dropdown');
+            dropdown.classList.toggle('open');
+        }
+
+    </script>
+
+</body>
+
+</html>
