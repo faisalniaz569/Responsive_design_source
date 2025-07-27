@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Full-width background */
+.menu-bg {
+    background-color: #333;
+    width: 100%;
+}
+
+/* Grid container with overlap */
+#skewmenu {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(4, 80px); /* 4 items, each 80px wide */
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Skewed menu items */
+.menu-item {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 18px 0;
+    text-decoration: none;
+    background-color: transparent;
+    transform: skew(20deg);
+    position: relative;
+    z-index: 1;
+    margin-left: -5px; 
+}
+
+/* First item no overlap */
+.menu-item:first-child {
+    margin-left: 0;
+}
+
+/* Unskew text inside */
+.menu-item span {
+    display: block;
+    transform: skew(-20deg);
+    font-size: 14px;
+}
+
+/* Hover & active states */
+.menu-item:hover:not(.active),
+.active {
+    background-color: #04AA6D;
+    cursor: pointer;
+    z-index: 2; 
+}
+
+
+
+/* ========================= */
+/* ✅ Responsive Styles Here */
+/* ========================= */
+@media (max-width: 768px) {
+    #skewmenu {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-flow: row;
+        max-width: 100%;]
+    }
+
+    .menu-item {
+        margin-left: 0;
+        width: 100%;
+        transform: skew(0deg); /* মোবাইলে স্কিউ অফ করলে ইউজার এক্সপেরিয়েন্স ভালো হয় */
+        padding: 14px 0;
+    }
+
+    .menu-item span {
+        transform: skew(0deg); /* স্কিউ অফ */
+        font-size: 16px;
+    }
+}
