@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Grid Menu</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- ✅ Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+    <div class="topnav" id="myTopnav">
+        <div class="nav-wrapper">
+            <a href="#home" class="active">Home</a>
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+            <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+                <i class="fas fa-bars show-bar"></i>
+                <i class="fas fa-times hide-times" style="display: none;"></i>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const topnav = document.getElementById("myTopnav");
+            const bars = document.querySelector(".fa-bars");
+            const times = document.querySelector(".fa-times");
+
+            topnav.classList.toggle("responsive");
+
+            if (topnav.classList.contains("responsive")) {
+                bars.style.display = "none";
+                times.style.display = "inline-block";
+            } else {
+                bars.style.display = "inline-block";
+                times.style.display = "none";
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
