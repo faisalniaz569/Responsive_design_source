@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Two Unequal Column with Grid</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .column {
+            padding: 10px;
+            min-height: 300px;
+        }
+
+        .left {
+            background-color: #aaa;
+        }
+
+        .right {
+            background-color: #bbb;
+        }
+
+        /* Responsive for small screens */
+        @media (max-width: 768px) {
+            .row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h2>Two Unequal Columns (Grid Layout)</h2>
+
+    <div class="row">
+        <div class="column left">
+            <h2>Column 1</h2>
+            <p>Some text..</p>
+        </div>
+        <div class="column right">
+            <h2>Column 2</h2>
+            <p>Some text..</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

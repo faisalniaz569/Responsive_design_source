@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Three Unequal Columns (Grid)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .column {
+            padding: 10px;
+            min-height: 300px;
+        }
+
+        .left {
+            background-color: #aaa;
+        }
+
+        .middle {
+            background-color: #bbb;
+        }
+
+        .right {
+            background-color: #ccc;
+        }
+
+        /* Two column layout on medium screens */
+        @media (max-width: 992px) {
+            .row {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .middle {
+                grid-column: span 2; /* Middle column takes full width */
+            }
+        }
+
+        /* One column layout on small screens */
+        @media (max-width: 600px) {
+            .row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h2>Three Unequal Columns (Grid Layout)</h2>
+
+    <div class="row">
+        <div class="column left">
+            <h2>Column 1</h2>
+            <p>Some text..</p>
+        </div>
+        <div class="column middle">
+            <h2>Column 2</h2>
+            <p>Some text..</p>
+        </div>
+        <div class="column right">
+            <h2>Column 3</h2>
+            <p>Some text..</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
