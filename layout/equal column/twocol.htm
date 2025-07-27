@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Two Column Layout</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* 2 columns */
+            gap: 20px;
+            padding: 10px;
+        }
+
+        .column {
+            background-color: #e0e0e0;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        /* Responsive layout: One column */
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="grid-container">
+        <div class="column">Column 1</div>
+        <div class="column">Column 2</div>
+    </div>
+
+</body>
+
+</html>
