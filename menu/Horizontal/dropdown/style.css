@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+
+#dropdownmenu {
+    background-color: #38444d;
+    width: 100%;
+}
+
+.menu-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+.menu-items {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 5px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+}
+
+.menu-items li {
+    position: relative;
+}
+
+.menu-items a,
+.dropbtn {
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.menu-items a:hover,
+.dropdown:hover .dropbtn,
+.dropdown-content a:hover {
+    background-color: red;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #38444d;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    z-index: 100;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-content a {
+    padding: 12px 16px;
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+    .menu-header {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 28px;
+        color: white;
+        cursor: pointer;
+        text-align: right;
+        padding: 14px 20px 14px 0;
+        background-color: #38444d;
+        width: 100%;
+    }
+
+    .menu-items {
+        display: none;
+        width: 100%;
+        grid-auto-flow: row;
+        background-color: #38444d;
+        margin-top: 0;
+    }
+
+    .menu-items.active {
+        display: grid;
+    }
+
+    .menu-items li {
+        width: 100%;
+        border-top: 1px solid #555;
+    }
+
+    .menu-items a,
+    .dropbtn {
+        width: 100%;
+        text-align: center;
+        padding: 14px 10px;
+    }
+
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        background-color: #2c333a;
+    }
+
+    .dropdown-content a {
+        width: 100%;
+        padding: 15px 20px 15px 15px;
+        box-sizing: border-box;
+        text-align: left;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: none;
+    }
+
+    .dropdown.open .dropdown-content {
+        display: block;
+    }
+
+    .dropdown .dropbtn::after {
+        content: " ▼";
+    }
+}
